@@ -19,17 +19,17 @@
         <input type="radio" name="position" />
 
         <div id="carousel">
-            <img v-bind:src="'images/5web.jpg'" class="item">
-            <img v-bind:src="'images/10web.jpg'" class="item">
-            <img v-bind:src="'images/14web.jpg'" class="item">
-            <img v-bind:src="'images/2web.jpg'" class="item">
-            <img v-bind:src="'images/4web.jpg'" class="item">
-            <img v-bind:src="'images/6web.jpg'" class="item">
-            <img v-bind:src="'images/7web.jpg'" class="item">
-            <img v-bind:src="'images/8web.jpg'" class="item">
-            <img v-bind:src="'images/9web.jpg'" class="item">
-            <img v-bind:src="'images/3web.jpg'" class="item">
-            <img v-bind:src="'images/13web.jpg'" class="item">
+            <img v-bind:src="'/images/5web.jpg'" class="item">
+            <img v-bind:src="'/images/10web.jpg'" class="item">
+            <img v-bind:src="'/images/14web.jpg'" class="item">
+            <img v-bind:src="'/images/2web.jpg'" class="item">
+            <img v-bind:src="'/images/4web.jpg'" class="item">
+            <img v-bind:src="'/images/6web.jpg'" class="item">
+            <img v-bind:src="'/images/7web.jpg'" class="item">
+            <img v-bind:src="'/images/8web.jpg'" class="item">
+            <img v-bind:src="'/images/9web.jpg'" class="item">
+            <img v-bind:src="'/images/3web.jpg'" class="item">
+            <img v-bind:src="'/images/13web.jpg'" class="item">
         </div>
 
     </div>

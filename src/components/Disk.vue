@@ -18,7 +18,7 @@ const fifthLine = computed(() => props.size * 0.5 + 'px')
                     <div class="line three">
                         <div class="line four">
                                 <img v-bind:class="{ 'animation': props.animated }" v-if="props.title != null"
-                                    v-bind:src="'images/' + props.title?.image" alt="">
+                                    v-bind:src="'/images/' + props.title?.image" alt="">
                         </div>
                     </div>
                 </div>

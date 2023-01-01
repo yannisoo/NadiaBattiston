@@ -2,7 +2,7 @@
     <div class="holder">
         <h1 >Nadia Battiston, Actrice</h1>
         <h2>Une voix off pro pour magnifier votre travail</h2>
-        <img src="images/mic-background-image.png" alt="Nadia Battiston">
+        <img src="/images/mic-background-image.png" alt="Nadia Battiston">
     </div>
 </template>
   
