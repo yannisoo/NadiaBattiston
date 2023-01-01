@@ -1,0 +1,140 @@
+{
+    "categories": [
+        {
+            "name": "Pub TV/Radio",
+            "value": "pub_tv"
+        },
+        {
+            "name": "Pub Radio",
+            "value": "pub_radio"
+        },
+        {
+            "name": "Documentaire",
+            "value": "documentary"
+        },
+        {
+            "name": "Doublage",
+            "value": "doublage"
+        },
+        {
+            "name": "Film Institutionel",
+            "value": "institutional"
+        }
+    ],
+    "timbers": [
+        {
+            "name": "Léger",
+            "value": "light"
+        },
+        {
+            "name": "Medium léger",
+            "value": "medium_light"
+        },
+        {
+            "name": "Medium",
+            "value": "medium"
+        },
+        {
+            "name": "Medium grave",
+            "value": "medium_low"
+        },
+        {
+            "name": "Grave",
+            "value": "low"
+        }
+    ],
+    "interpretation": [
+        {
+            "name": "Chaleureux",
+            "value": "chaleureux"
+        },
+        {
+            "name": "Humain",
+            "value": "humain"
+        },
+        {
+            "name": "Naturel",
+            "value": "naturel"
+        },
+        {
+            "name": "Rassurant",
+            "value": "rassurant"
+        },
+        {
+            "name": "Souriant",
+            "value": "souriant"
+        },
+        {
+            "name": "Enveloppant",
+            "value": "enveloppant"
+        },
+        {
+            "name": "Promotionel",
+            "value": "promotional"
+        },
+        {
+            "name": "Dynamique",
+            "value": "dynamique"
+        },
+        {
+            "name": "Serieux",
+            "value": "serious"
+        },
+        {
+            "name": "Informatif",
+            "value": "informatif"
+        },
+        {
+            "name": "Droit",
+            "value": "right"
+        },
+        {
+            "name": "Posée",
+            "value": "still"
+        },
+        {
+            "name": "Doux",
+            "value": "soft"
+        },
+        {
+            "name": "Maternel",
+            "value": "maternal"
+        },
+        {
+            "name": "Snob",
+            "value": "snob"
+        },
+        {
+            "name": "Sensuel",
+            "value": "sensual"
+        },
+        {
+            "name": "Murmuré",
+            "value": "whispered"
+        },
+        {
+            "name":"Colère",
+            "value":"colère"
+        },
+        {
+            "name": "Tension",
+            "value": "tension"
+        },
+        {
+            "name": "Peur",
+            "value": "peur"
+        },
+        {
+            "name": "Criée",
+            "value": "crie"
+        },
+        {
+            "name": "Tristesse",
+            "value": "tristesse"
+        },
+        {
+            "name": "Frais",
+            "value": "frais"
+        }
+    ]
+}

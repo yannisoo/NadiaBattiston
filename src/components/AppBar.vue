@@ -4,10 +4,13 @@
         <nav>
             <ul>
                 <li>
-                    <router-link to="/">Home</router-link>
+                    <router-link to="/">Accueil</router-link>
                 </li>
                 <li>
-                    <router-link to="/about">About</router-link>
+                    <router-link to="/about">Qui suis-je</router-link>
+                </li>
+                <li>
+                    <router-link to="/pictures">Photos</router-link>
                 </li>
             </ul>
         </nav>
@@ -22,6 +25,8 @@
         max-width: 100vw;
         padding: 0  30px;
         height: 75px;
+        background-color: var(--color1);
+        color: white;
     }
     h1 {
         font-weight: 700;

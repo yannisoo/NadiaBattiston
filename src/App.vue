@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 import AppBar from "./components/AppBar.vue";
 </script>
 
 <template>
   <AppBar/>
-    
-  
-
   <RouterView />
 </template>
 
@@ -18,6 +15,4 @@ import AppBar from "./components/AppBar.vue";
     max-width: 100vw;
     max-height: 100vh;
   }
-
-
 </style>

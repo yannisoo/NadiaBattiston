@@ -7,7 +7,19 @@
     font-family: 'Inter';
     src: url("assets/fonts/Inter-Regular.ttf");
 }
+
 @font-face {
     font-family: 'Inter Bold';
     src: url("assets/fonts/Inter-Bold.ttf");
+}
+
+:root {
+    --color1: #FCA311;
+    --color2: #14213D;
+    --color3: #14213D;
+    --color4: #E5E5E5;
+}
+
+html {
+    background-color: black;
 }

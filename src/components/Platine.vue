@@ -1,14 +1,39 @@
+<script setup lang="ts">
+import { useAudioStore } from '@/stores/audio';
+import Disk from './Disk.vue';
+
+const stepperInfo = useAudioStore()
+</script>
+
+
 <template>
-  <div class="animation">
-    <div class="line one">
-      <div class="line two">
-        <div class="line three">
-          <div class="line four">
-            <div class="line five">
-              <img
-                src="https://nadia-battiston.fr/wp-content/uploads/2018/08/stickers-citroen-c5-ref30-autocollant-voiture-sticker-auto-autocollants-decals-sponsors-racing-tuning-sport-logo-min-400x400.jpeg"
-                alt="">
-            </div>
+  <div class="center">
+
+    <div class="platine">
+      
+      <div class="player">
+        <Disk :animated=stepperInfo.isPlaying :title="stepperInfo.title" :size=220></Disk>
+        <div class="row">
+          <div class="previous knob" @click="stepperInfo.previousAudio">
+            <span class="material-symbols-outlined">
+              fast_rewind
+            </span>
+          </div>
+          <div class="pause knob" v-if="stepperInfo.isPlaying" @click="stepperInfo.pause">
+            <span class="material-symbols-outlined">
+              play_pause
+            </span>
+          </div>
+          <div class="pause knob" v-if="!stepperInfo.isPlaying" @click="stepperInfo.play">
+            <span class="material-symbols-outlined">
+              play_pause
+            </span>
+          </div>
+          <div class="next knob" @click="stepperInfo.nextAudio">
+            
+            <span class="material-symbols-outlined">
+              fast_forward
+            </span>
           </div>
         </div>
       </div>
@@ -21,58 +46,55 @@ div {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
-img {
-  width: 4vw;
-  height: 4vw;
-  border-radius: 50%
+.material-symbols-outlined {
+  color: white;
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
 
-.line {
-  border: 1px solid #0f0f0f;
+.platine {
+  background-image: url("https://stnoufer.files.wordpress.com/2010/10/dark-wood-texture.jpg");
+  border-radius: 10px;
+  padding: 0 25px;
+  width: 250px;
+  height: 300px;
 }
 
-.one {
-  width: 9vw;
-  height: 9vw;
+.row {
+  margin-top: 25px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.two {
-  width: 8vw;
-  height: 8vw;
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.three {
-  width: 7vw;
-  height: 7vw;
+.knob {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color2);
+  cursor: pointer;
 }
 
-.four {
-  width: 6vw;
-  height: 6vw;
-}
 
-.five {
-  width: 5vw;
-  height: 5vw;
-}
-
-.animation {
-  width: 10vw;
-  height: 10vw;
-  animation: rotation 5s infinite linear;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
 </style>

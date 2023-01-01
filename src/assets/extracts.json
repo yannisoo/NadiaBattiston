@@ -1,0 +1,802 @@
+[
+    {
+        "name": "Amundi",
+        "url": "amundi.mp3",
+        "image": "amundi.png",
+        "categories": [
+            "institutional"
+        ],
+        "timbers": [
+            "medium"
+        ],
+        "interpretation": [
+            "chaleureux",
+            "humain",
+            "naturel",
+            "rassurant",
+            "souriant"
+        ]
+    },
+    {
+        "name": "Citroen C5",
+        "url": "citroen-C5.mp3",
+        "image": "citroen-C5.jpeg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "enveloppant",
+            "chaleureux",
+            "rassurant",
+            "souriant"
+        ]
+    },
+    {
+        "name": "Citroen",
+        "url": "citroen.mp3",
+        "image": "citroen.jpg",
+        "categories": [
+            "pub_radio"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "promotional",
+            "dynamique",
+            "souriant"
+        ]
+    },
+    {
+        "name": "Intermarché",
+        "url": "intermarche.mp3",
+        "image": "intermarche.png",
+        "categories": [
+            "pub_radio"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "promotional",
+            "dynamique"
+        ]
+    },
+    {
+        "name": "Vichy",
+        "url": "vichy.mp3",
+        "image": "vichy.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "souriant",
+            "soft",
+            "dynamique"
+        ]
+    },
+    {
+        "name": "Addeco",
+        "url": "addeco.mp3",
+        "image": "adecco.jpg",
+        "categories": [
+            "pub_radio"
+        ],
+        "timbers": [
+            "medium_low"
+        ],
+        "interpretation": [
+            "dynamique",
+            "promotional",
+            "serious",
+            "right",
+            "informatif",
+            "enjouee"
+        ]
+    },
+    {
+        "name": "Colgate (3 voix)",
+        "url": "colgate.mp3",
+        "image": "colgate.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "low",
+            "medium_low",
+            "high"
+        ],
+        "interpretation": [
+            "souriant",
+            "dynamique",
+            "snob"
+        ]
+    },
+    {
+        "name": "Decathlon",
+        "url": "decathlon.mp3",
+        "image": "decathlon.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium"
+        ],
+        "interpretation": [
+            "dynamique",
+            "promotional",
+            "souriant",
+            "enjouee"
+        ]
+    },
+    {
+        "name": "Dons d'organes",
+        "url": "dons-dorgane.mp3",
+        "image": "don-dorganne.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "high",
+            "medium_low"
+        ],
+        "interpretation": [
+            "serious",
+            "informatif",
+            "convincing",
+            "rassurant"
+        ]
+    },
+    {
+        "name": "Foie gras",
+        "url": "foie-gras.mp3",
+        "image": "foie-gras.png",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_low"
+        ],
+        "interpretation": [
+            "snob",
+            "sensual",
+            "souriant"
+        ]
+    },
+    {
+        "name": "Friskies",
+        "url": "friskies.mp3",
+        "image": "friskies.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "souriant",
+            "informatif",
+            "chaleureux",
+            "enjouee"
+        ]
+    },
+    {
+        "name": "Gallia",
+        "url": "gallia.mp3",
+        "image": "gallia.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "enveloppant",
+            "chaleureux",
+            "maternal",
+            "souriant",
+            "soft",
+            "rassurant"
+        ]
+    },
+    {
+        "name": "Hollywood",
+        "url": "holly-power-mint.mp3",
+        "image": "hollywood.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_low"
+        ],
+        "interpretation": [
+            "snob",
+            "sensual",
+            "enveloppant"
+        ]
+    },
+    {
+        "name": "Hyundai",
+        "url": "hyundai.mp3",
+        "image": "hyundai.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "informatif",
+            "souriant",
+            "soft"
+        ]
+    },
+    {
+        "name": "Insafe",
+        "url": "insafe.mp3",
+        "image": "insafe.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_low"
+        ],
+        "interpretation": [
+            "serious",
+            "informatif",
+            "chaleureux",
+            "humain"
+        ]
+    },
+    {
+        "name": "Fnac",
+        "url": "julien-baer.mp3",
+        "image": "fnac.jpg",
+        "categories": [
+            "pub_radio"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "souriant",
+            "soft",
+            "sensual",
+            "enveloppant"
+        ]
+    },
+    {
+        "name": "Kodak",
+        "url": "kodak.mp3",
+        "image": "kodak.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "naturel",
+            "enveloppant",
+            "souriant",
+            "chaleureux",
+            "soft"
+        ]
+    },
+    {
+        "name": "Liftactive",
+        "url": "liftactive.mp3",
+        "image": "vichy.jpg",
+        "categories": [
+            "institutional",
+            "documentary"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "serious",
+            "informatif",
+            "right",
+            "still"
+        ]
+    },
+    {
+        "name": "Lilly",
+        "url": "lily.mp3",
+        "image": "lilly.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_low"
+        ],
+        "interpretation": [
+            "serious",
+            "informatif",
+            "right",
+            "still",
+            "chaleureux"
+        ]
+    },
+    {
+        "name": "Lu",
+        "url": "lu.mp3",
+        "image": "lu.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "maternal",
+            "chaleureux",
+            "soft",
+            "enveloppant",
+            "souriant",
+            "rassurant"
+        ]
+    },
+    {
+        "name": "Ocirp",
+        "url": "Ocirp.mp3",
+        "image": "ocirp.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium"
+        ],
+        "interpretation": [
+            "maternal",
+            "naturel",
+            "chaleureux",
+            "soft",
+            "enveloppant",
+            "souriant"
+        ]
+    },
+    {
+        "name": "Odissey de l'espace",
+        "url": "odissey-de-lespace.mp3",
+        "image": "espace.png",
+        "categories": [
+            "documentary"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "souriant",
+            "chaleureux",
+            "informatif",
+            "still",
+            "soft"
+        ]
+    },
+    {
+        "name": "Origina",
+        "url": "orangina.mp3",
+        "image": "orangina.png",
+        "categories": [
+            "institutional"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "dynamique",
+            "souriant",
+            "frais",
+            "informatif",
+            "enjouee"
+        ]
+    },
+    {
+        "name": "Paco Rabanne",
+        "url": "paco-rabanne.mp3",
+        "image": "paco-rabanne.png",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_low"
+        ],
+        "interpretation": [
+            "sensual",
+            "souriant",
+            "soft",
+            "chaleureux",
+            "enveloppant"
+        ]
+    },
+    {
+        "name": "Qobuz billboard",
+        "url": "qobuz-billboard.wav",
+        "image": "qobuz.png",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "souriant",
+            "chaleureux",
+            "enjouee"
+        ]
+    },
+    {
+        "name": "Qobuz carton",
+        "url": "qobuz-carton.wav",
+        "image": "qobuz.png",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "right",
+            "serious",
+            "souriant"
+        ]
+    },
+    {
+        "name": "Qobuz Christophe Mae",
+        "url": "qobuz-christophe-mae.wav",
+        "image": "qobuz.png",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "right",
+            "serious",
+            "souriant",
+            "chaleureux"
+        ]
+    },
+    {
+        "name": "Qobuz guitare",
+        "url": "qobuz-guitar.wav",
+        "image": "qobuz.png",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "right",
+            "souriant",
+            "chaleureux",
+            "enveloppant"
+        ]
+    },
+    {
+        "name": "Super U",
+        "url": "U.mp3",
+        "image": "U.jpg",
+        "categories": [
+            "institutional"
+        ],
+        "timbers": [
+            "medium"
+        ],
+        "interpretation": [
+            "informatif",
+            "dynamique",
+            "promotional",
+            "serious"
+        ]
+    },
+    {
+        "name": "Attraction",
+        "url": "attraction-lancome.mp3",
+        "image": "lancome.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "whispered",
+            "sensual",
+            "soft"
+        ]
+    },
+    {
+        "name": "Signal white now",
+        "url": "white-now.mp3",
+        "image": "signal.jpg",
+        "categories": [
+            "pub_tv"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "enjouee",
+            "souriant",
+            "informatif",
+            "dynamique",
+            "chaleureux"
+        ]
+    },
+    {
+        "name": "Une femme piégée (tension)",
+        "image": "une-femme-piegee.jpeg",
+        "url": "une-femme-piegee-tension.mp3",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "colère",
+            "tension",
+            "peur"
+        ]
+    },
+    {
+        "name": "Une femme piégée (enfermée)",
+        "image": "une-femme-piegee.jpeg",
+        "url": "une-femme-piegee-enfermee.mp3",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "crie",
+            "tension",
+            "peur"
+        ]
+    },
+    {
+        "name": "Inspecteur Lewis (dénoument)",
+        "image": "inspecteur-lewis.jpeg",
+        "url": "une-femme-piegee-enfermee.mp3",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "soft"
+        ]
+    },
+    {
+        "name": "Une femme piégée (confrontation)",
+        "image": "une-femme-piegee.jpeg",
+        "url": "une-femme-piegee-confrontation.mp3",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "tension",
+            "peur"
+        ]
+    },
+    {
+        "name": "Karol l'homme qui devint Pape",
+        "image": "karol.jpg",
+        "url": "une-femme-piegee-confrontation.mp3",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "high"
+        ],
+        "interpretation": [
+            "tristesse"
+        ]
+    },
+    {
+        "name": "Inspecteur Lewis (interrogatoire)",
+        "image": "inspecteur-lewis.jpeg",
+        "url": "inspecteur-lewis-interrogatoire.mp3",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "medium_low",
+            "light"
+        ],
+        "interpretation": [
+            "tristesse"
+        ]
+    },
+    {
+        "name": "Three Rivers (mère)",
+        "url": "three-rivers.mp3",
+        "image": "three-rivers.png",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "maternal"
+        ]
+    },
+    {
+        "name": "Inspecteur Lewis (amoureuse)",
+        "image": "inspecteur-lewis.jpeg",
+        "url": "inspecteur-lewis-amoureuse.mp3",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "medium_high"
+        ],
+        "interpretation": [
+            "sensual",
+            "soft"
+        ]
+    },
+    {
+        "name": "Louis Philippe prete serement",
+        "image": "chateau-de-versailles.jpg",
+        "url": "louis-philippe-prete-serement.mp3",
+        "categories": [
+            "documentary"
+        ],
+        "timbers": [
+            "medium_low"
+        ],
+        "interpretation": [
+            "right",
+            "informatif",
+            "serious",
+            "still"
+        ]
+    },
+    {
+        "name": "Louis Philippe et ses fils",
+        "image": "chateau-de-versailles.jpg",
+        "url": "louis-philippe-et-ses-fils.mp3",
+        "categories": [
+            "documentary"
+        ],
+        "timbers": [
+            "medium"
+        ],
+        "interpretation": [
+            "right",
+            "informatif",
+            "serious",
+            "still",
+            "soft"
+        ]
+    },
+    {
+        "name": "Prise de la Smala",
+        "image": "chateau-de-versailles.jpg",
+        "url": "prise-de-la-smala.mp3",
+        "categories": [
+            "documentary"
+        ],
+        "timbers": [
+            "medium"
+        ],
+        "interpretation": [
+            "right",
+            "informatif",
+            "serious",
+            "still",
+            "soft"
+        ]
+    },
+    {
+        "name": "Louis Phillippe fleuve Muonio",
+        "image": "chateau-de-versailles.jpg",
+        "url": "louis-philipe-fleuve-muonio.mp3",
+        "categories": [
+            "doublage"
+        ],
+        "timbers": [
+            "low"
+        ],
+        "interpretation": [
+            "right",
+            "informatif",
+            "serious",
+            "still",
+            "soft"
+        ]
+    },
+    {
+        "name": "leclerc-drive-chloe",
+        "image": "e-leclerc-logo.png",
+        "url": "leclerc-drive-chloe.mp3",
+        "categories": [
+            "pub_internet"
+        ],
+        "timbers": [
+            "medium"
+        ],
+        "interpretation": [
+            "dynamique",
+            "frais",
+            "souriant"
+        ]
+    },
+    {
+        "name": "leclerc-drive-cathia",
+        "image": "e-leclerc-logo.png",
+        "url": "leclerc-drive-cathia.mp3",
+        "categories": [
+            "pub_internet"
+        ],
+        "timbers": [
+            "medium"
+        ],
+        "interpretation": [
+            "dynamique",
+            "frais",
+            "souriant"
+        ]
+    },
+    {
+        "name": "medley",
+        "url": "medley.mp3",
+        "image": "medley.jpg",
+        "categories": [
+            "pub_radio",
+            "pub_tv",
+            "institutional",
+            "documentary",
+            "doublage"
+        ],
+        "timbers": [
+            "high",
+            "medium_high",
+            "medium",
+            "medium_low",
+            "low"
+        ],
+        "interpretation": [
+            "chaleureux",
+            "humain",
+            "naturel",
+            "rassurant",
+            "souriant",
+            "enveloppant",
+            "promotional",
+            "dynamique",
+            "serious",
+            "informatif",
+            "right",
+            "still",
+            "soft",
+            "maternal",
+            "snob",
+            "whispered",
+            "colère",
+            "tension",
+            "peur",
+            "crie",
+            "tristesse",
+            "frais"
+        ]
+    }
+]

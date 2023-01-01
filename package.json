@@ -9,6 +9,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.2.2",
     "pinia": "^2.0.16",
     "vue": "^3.2.37",
     "vue-audio-visual": "^2.5.0",
