@@ -93,7 +93,7 @@ section {
   justify-content: space-evenly;
   padding: 1rem;
   border-radius: 10px;
-  background-color: #1a1a1a;
+  background-color: var(--color2);
   width: 30vw;
   margin: 1rem;
 
