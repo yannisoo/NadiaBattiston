@@ -42,10 +42,30 @@
 
       </p>
     </div>
+  </section>
+  <h1>Contact</h1>
+  <section>
+    <div class="contact-section">
+      <span class="material-symbols-outlined">
+        phone
+      </span>
+      <br>
+      <p>
+        <a href="tel:+336 12 79 13 07">06 12 79 13 07</a>
+      </p>
+    </div>
+    <div class="contact-section">
+      <span class="material-symbols-outlined">
+        email
+      </span>
+      <br>
 
-
-
-
+      <p>
+        <a href="mailto:n.battiston@outlook.fr">
+          n.battiston@outlook.fr
+        </a>
+      </p>
+    </div>
   </section>
 </template>
 
@@ -62,18 +82,37 @@ section {
   font-size: 1.2rem;
   display: flex;
   padding: 2rem;
+  justify-content: space-evenly;
 }
 
+.contact-section{
+  display: flex;
+  
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  width: 30vw;
+  margin: 1rem;
+
+}
 @media screen and (max-width: 940px) {
   section {
     flex-direction: column;
+  }
+  .contact-section{
+    width: 80vw;
   }
   
 }
 img {
   width: 30vw;
 }
-
+.material-symbols-outlined{
+  font-size: 2rem;
+}
 .text {
   padding: 2rem;
 }
