@@ -1,13 +1,15 @@
 <template>
     <header class="shadow">
-        <h1 class="text-2xl ">Nadia Battiston</h1>
+        <h1 class="text-2xl full_title">Nadia Battiston</h1>
+        <h2 class="text-2xl small_title">NB</h2>
+
         <nav>
             <ul>
                 <li>
                     <router-link to="/">Accueil</router-link>
                 </li>
                 <li>
-                    <router-link to="/about">Qui suis-je</router-link>
+                    <router-link to="/about">Contact</router-link>
                 </li>
                 <li>
                     <router-link to="/pictures">Photos</router-link>
@@ -18,6 +20,9 @@
 </template>
 
 <style scoped>
+    .small_title{
+        display: none;
+    }
     header{
         display: flex;
         align-items: center;
@@ -28,7 +33,7 @@
         background-color: var(--color1);
         color: white;
     }
-    h1 {
+    h1, h2 {
         font-weight: 700;
         font-family: "inter bold";
     }
@@ -46,4 +51,12 @@
         justify-content: space-between;
 
     }
+    @media (max-width: 940px) {
+        .small_title{
+            display: block;
+        }
+        .full_title{
+            display: none;
+        }
+      }
 </style>

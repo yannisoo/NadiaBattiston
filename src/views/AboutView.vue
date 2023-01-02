@@ -18,9 +18,8 @@
       <br>
       <p>
         En 1987, j'obtiens un BAC littéraire option Art Dramatique. J'intègre ensuite, pendant trois ans, l'École de
-        Théâtre T.E.M Montreuil, sous la direction de Michel BLIN. Nous avons travaillé sur différents auteurs, et
-        monter
-        avec notre troupe la pièce de théâtre "La Poche Parmentier" de Georges Perec.
+        Théâtre le T.E.M à Montreuil sous la direction de Michel BLIN. Nous avons travaillé sur différents auteurs et
+        monté avec notre troupe la pièce de théâtre "La Poche Parmentier" de Georges Perec.
       </p>
       <br>
       <p>
@@ -35,7 +34,7 @@
         Je prends mon envol et me spécialise dans le doublage, voice-over, narration, radio, films institutionnels et
         publicités.
         <br>
-        Comédienne depuis 20 ans, je voue une véritable passion pour la comédie, la poésie, le théâtre…
+        Aujourd'hui, comédienne depuis 20 ans, je voue une véritable passion pour la comédie, la poésie, le théâtre…
         <br>
         J’apprends encore et toujours des textes qui résonnent en moi.
         <br>
