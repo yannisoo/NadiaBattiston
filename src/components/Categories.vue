@@ -15,10 +15,9 @@ const emit = defineEmits<{
 
 <style scoped>
 .holder {
-    display: flex;
-    flex-direction: space-between;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
     width: 100%;
     height: 100%;
     padding: 10px;
@@ -28,11 +27,10 @@ const emit = defineEmits<{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:var(--color4);;
+    background-color: var(--color4);
     width: 150px;
     height: 50px;
     border-radius: 10px;
-    margin: 10px;
     transition: all 0.3s ease-in-out;
 }
 .filter-node:hover {
@@ -48,4 +46,28 @@ const emit = defineEmits<{
     background-color: var(--color1);
     color: white;
 }
+
+@media (max-width: 940px) {
+    .filter-node:hover {
+        background-color: var(--color4);
+        color: black;
+    }
+    .active:hover {
+        background-color: var(--color1);
+        color: white;
+    }
+
+    .filter-node {
+        width: 100%;
+     }
+  }
+
+  @media (max-width: 380px) {
+    .holder {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+    }
+  }
 </style>

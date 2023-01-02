@@ -45,6 +45,7 @@ const stepperInfo = useAudioStore()
 
 <style scoped>
 .container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,7 +70,7 @@ const stepperInfo = useAudioStore()
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 60px;
+    height: 40px;
     background-color: var(--color4);
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
@@ -99,4 +100,16 @@ const stepperInfo = useAudioStore()
     background-color: var(--color3);
     color: white;
 }
+
+@media screen and (max-width: 940px) {
+    .stepper__step__title {
+        font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 445px) {
+    .stepper__step__title {
+        font-size: 0.8rem;
+    }
+  }
 </style>

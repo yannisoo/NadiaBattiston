@@ -59,9 +59,15 @@ h2{
   }
 
   @media (max-width: 940px) {
+    h2 {
+      font-size: 1.5em;
+    }
     .filter {
       width: 100%;
       flex-direction: column;
+    }
+    .main_content {
+      padding: 10px;
     }
   }
   main {
