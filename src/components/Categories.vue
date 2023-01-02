@@ -59,7 +59,14 @@ const emit = defineEmits<{
 
     .filter-node {
         width: 100%;
-     }
+        font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 445px) {
+    .filter-node {
+        font-size: 0.8rem;
+    }
   }
 
   @media (max-width: 380px) {
