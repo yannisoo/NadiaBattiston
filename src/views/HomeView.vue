@@ -60,7 +60,7 @@ h2{
 
   @media (max-width: 940px) {
     h2 {
-      font-size: 1.5em;
+      font-size: 1.5rem;
     }
     .filter {
       width: 100%;
@@ -68,6 +68,13 @@ h2{
     }
     .main_content {
       padding: 10px;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.1rem;
     }
   }
   main {
