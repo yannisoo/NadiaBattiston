@@ -77,7 +77,13 @@ export const useAudioStore = defineStore("audio", () => {
     audioIndex.value = index;
   }
 
-
+  function download() {
+    if (!title.value) return
+    const link = document.createElement('a');
+    link.href = 'audio/' + title.value.url;
+    link.download = 'Nadia_Battiston_' + title.value.name;
+    link.click();
+  } 
 
   function updateCategory(category: string) {
     if (categories.value.includes(category)) {
@@ -184,7 +190,8 @@ export const useAudioStore = defineStore("audio", () => {
     nextAudio,
     previousAudio,
     chooseAudio,
-    isPlaying
+    isPlaying,
+    download
   }
 
 });

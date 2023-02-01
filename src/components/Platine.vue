@@ -30,9 +30,13 @@ const stepperInfo = useAudioStore()
             </span>
           </div>
           <div class="next knob" @click="stepperInfo.nextAudio">
-            
             <span class="material-symbols-outlined">
               fast_forward
+            </span>
+          </div>
+          <div class="next knob" @click="stepperInfo.download">
+            <span class="material-symbols-outlined">
+              download
             </span>
           </div>
         </div>
@@ -48,6 +52,12 @@ div {
   justify-content: center;
   border-radius: 50%;
   flex-shrink: 0;
+}
+
+.download{
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .material-symbols-outlined {
@@ -69,7 +79,7 @@ div {
 
 .row {
   margin-top: 25px;
-  width: 150px;
+  width: 175px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
