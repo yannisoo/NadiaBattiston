@@ -10,7 +10,7 @@ const stepperInfo = useAudioStore()
   <div class="center">
 
     <div class="platine">
-      
+
       <div class="player">
         <Disk :animated=stepperInfo.isPlaying :title="stepperInfo.title" :size=220></Disk>
         <div class="row">
@@ -54,7 +54,7 @@ div {
   flex-shrink: 0;
 }
 
-.download{
+.download {
   position: absolute;
   top: 10px;
   right: 10px;
