@@ -22,6 +22,11 @@ const router = createRouter({
       name: "pictures",
       component: PicturesView,
     },
+    {
+      path: "/studio",
+      name: "studio",
+      component: () => import("../views/StudioView.vue"),
+    }
   ],
 });
 

@@ -70,7 +70,7 @@ const stepperInfo = useAudioStore()
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 40px;
+    height: 60px;
     background-color: var(--color4);
     border-radius: 10px;
     transition: all 0.3s ease-in-out;

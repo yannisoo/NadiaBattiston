@@ -13,7 +13,7 @@
             "value": "documentary"
         },
         {
-            "name": "Doublage",
+            "name": "Doublage film",
             "value": "doublage"
         },
         {
@@ -23,12 +23,8 @@
     ],
     "timbers": [
         {
-            "name": "Léger",
-            "value": "light"
-        },
-        {
             "name": "Medium léger",
-            "value": "medium_light"
+            "value": "medium_high"
         },
         {
             "name": "Medium",
@@ -47,10 +43,6 @@
         {
             "name": "Chaleureux",
             "value": "chaleureux"
-        },
-        {
-            "name": "Humain",
-            "value": "humain"
         },
         {
             "name": "Naturel",

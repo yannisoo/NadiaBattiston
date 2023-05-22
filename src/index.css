@@ -12,6 +12,10 @@
     font-family: 'Inter Bold';
     src: url("assets/fonts/Inter-Bold.ttf");
 }
+@font-face {
+    font-family: 'handwritten';
+    src: url('assets/fonts/wc-mano-negra-bta.regular.otf');
+}
 
 :root {
     --color1: #0F056B;

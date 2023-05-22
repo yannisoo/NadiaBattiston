@@ -37,6 +37,7 @@ main{
   height: 100%;
 }
 .main_content{
+  width: 100%;
   padding: 36px;
   max-width: 1700px;
 }
