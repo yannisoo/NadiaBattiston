@@ -87,22 +87,6 @@
         ]
     },
     {
-        "name": "enfants_tueurs",
-        "image": "adolescents_criminel.jpeg",
-        "url": "enfants_tueurs.mp3",
-        "categories": [
-            "documentary"
-        ],
-        "timbers": [
-            "medium"
-        ],
-        "interpretation": [
-            "serious",
-            "tension",
-            "right"
-        ]
-    },
-    {
         "name": "Louis Philippe prete serement",
         "image": "chateau-de-versailles.jpg",
         "url": "louis-philippe-prete-serement.mp3",
