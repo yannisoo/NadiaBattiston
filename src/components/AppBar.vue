@@ -110,7 +110,7 @@ const handleExpand = () => {
     right: 0;
     width: 70vw;
     height: 100vh;
-    background-color: var(--color1);
+    background-color: var(--color2);
     color: white;
     transform: translateX(100%);
     transition: transform 0.3s ease;
@@ -155,7 +155,7 @@ header {
     width: 100vw;
     padding: 0 30px;
     height: 75px;
-    background-color: var(--color1);
+    background-color: var(--color2);
     color: white;
 }
 
