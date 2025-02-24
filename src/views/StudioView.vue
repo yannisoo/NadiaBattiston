@@ -66,7 +66,16 @@
           </a>
         </p>
       </div>
-    </section>
+      <a href="https://www.instagram.com/battistonnadia/">
+      <div class="contact-section">
+        <img src="/images/instagram.svg" alt="instagram" class="icon">
+        <br>
+        <p>
+            @battistonnadia
+          </p>
+        </div>
+      </a>
+      </section>
   </div>
 </template>
 
@@ -219,7 +228,10 @@ li {
   width: 60%;
   padding: 2rem;
 }
-
+.icon {
+  width: 40px;
+  height: 40px;
+}
 
 </style> 
 <!-- <template>
