@@ -39,6 +39,11 @@
         </div>
      
       </section>
+      <section class="video-section">
+      <video controls>
+        <source src="/video/demain_des_laube.mp4" type="video/mp4">
+      </video>
+      </section> 
     <h1>Contact</h1>
     <section>
       <div class="contact-section">
@@ -109,6 +114,9 @@ img {
   align-items: flex-start;
   justify-content: center;
   max-width: 1700px;
+}
+.video-section {
+  max-height: 90vh;
 }
 .space-between {
   justify-content: space-between;

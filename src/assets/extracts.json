@@ -104,48 +104,6 @@
         ]
     },
     {
-        "name": "Je suis une voix",
-        "image": "cabine_one_plus.jpg",
-        "url": "je-suis-une-voix.m4a",
-        "categories": [
-            "pub_radio",
-            "pub_tv",
-            "institutional",
-            "documentary",
-            "doublage"
-        ],
-        "timbers": [
-            "high",
-            "medium_high",
-            "medium",
-            "medium_low",
-            "low"
-        ],
-        "interpretation": [
-            "chaleureux",
-            "naturel",
-            "rassurant",
-            "souriant",
-            "enveloppant",
-            "promotional",
-            "dynamique",
-            "serious",
-            "informatif",
-            "right",
-            "still",
-            "soft",
-            "maternal",
-            "snob",
-            "whispered",
-            "colère",
-            "tension",
-            "peur",
-            "crie",
-            "tristesse",
-            "frais"
-        ]
-    },
-    {
         "name": "Louis Philippe et ses fils",
         "image": "chateau-de-versailles.jpg",
         "url": "louis-philippe-et-ses-fils.mp3",
