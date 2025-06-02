@@ -38,6 +38,7 @@
       <iframe
         class="video"
         src="https://www.youtube.com/embed/P9nJpAhNe8k"
+        data-src="https://www.youtube.com/embed/P9nJpAhNe8k"
         allowfullscreen
       ></iframe>
     </section>
