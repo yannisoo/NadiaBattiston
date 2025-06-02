@@ -182,7 +182,7 @@ li {
   margin: 1rem;
 }
 
-video {
+.video {
   display: block;
 }
 
