@@ -35,7 +35,11 @@
       </div>
     </section>
     <section class="video-section">
-      <iframe height="600" src="https://www.youtube.com/embed/P9nJpAhNe8k">
+      <iframe
+        height="600"
+        width="100%"
+        src="https://www.youtube.com/embed/P9nJpAhNe8k"
+      >
       </iframe>
     </section>
     <h1>Contact</h1>
