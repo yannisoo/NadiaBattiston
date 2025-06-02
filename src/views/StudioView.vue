@@ -36,6 +36,7 @@
     </section>
     <section class="video-section">
       <iframe
+        class="video"
         height="600"
         width="100%"
         src="https://www.youtube.com/embed/P9nJpAhNe8k"
@@ -179,6 +180,10 @@ li {
   background-color: var(--color2);
   width: 30vw;
   margin: 1rem;
+}
+
+video {
+  display: block;
 }
 
 @media screen and (max-width: 940px) {
