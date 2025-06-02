@@ -35,12 +35,15 @@
       </div>
     </section>
     <section class="video-section">
-      <iframe
+      <video
         class="video"
-        src="https://www.youtube.com/embed/P9nJpAhNe8k"
-        data-src="https://www.youtube.com/embed/P9nJpAhNe8k"
-        allowfullscreen
-      ></iframe>
+        controls
+        playsinline
+        poster="/video/demain_des_laube.mp4"
+      >
+        <source src="/videos/your-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </section>
     <h1>Contact</h1>
     <section>
@@ -179,23 +182,6 @@ li {
   background-color: var(--color2);
   width: 30vw;
   margin: 1rem;
-}
-
-.video-section {
-  width: 100%;
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  max-height: none;
-}
-.video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  border: none;
-  display: block;
 }
 
 @media screen and (max-width: 940px) {
