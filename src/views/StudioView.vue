@@ -1,84 +1,69 @@
 <template>
   <div id="max-size">
-
     <h1>Mon studio</h1>
-      <section class="studio-section">
-        <img ref="img1" src="/images/cabine_one_plus.jpg">
-        <div class="block">
-          <ul>
-           
-          </ul>
-        </div>
-        
-        <div class="block space-between">
-          <img ref="img2" src="/images/studio-micro.jpeg">
-          <img ref="img3" src="/images/studio.jpeg">
-        </div>
-        <div class="block space-between" >
-           
-            <div class="text-side">
-              <div class="text-holder">
-                <ul>
-                  <li>- Cabine StudioBricks VO Edition</li>
-                  <br>
-                  <li>- Carte son SSL2+ </li>
-                  <br>
-                  <li>- Micro Neumann U87 Ai</li>
-                  <br>
-                  <li>- Casque Neumann NDH 20</li>
-                  <br>
-                  <li>- Filtre anti-pop Shure PS-6</li>
-                  <br>
-                  <li>- Mac mini M1</li>
-                  <br>
-                  <li>- Pro Tools Studio</li>
-                </ul>
-            </div>
+    <section class="studio-section">
+      <img ref="img1" src="/images/cabine_one_plus.jpg" />
+      <div class="block">
+        <ul></ul>
+      </div>
+
+      <div class="block space-between">
+        <img ref="img2" src="/images/studio-micro.jpeg" />
+        <img ref="img3" src="/images/studio.jpeg" />
+      </div>
+      <div class="block space-between">
+        <div class="text-side">
+          <div class="text-holder">
+            <ul>
+              <li>- Cabine StudioBricks VO Edition</li>
+              <br />
+              <li>- Carte son SSL2+</li>
+              <br />
+              <li>- Micro Neumann U87 Ai</li>
+              <br />
+              <li>- Casque Neumann NDH 20</li>
+              <br />
+              <li>- Filtre anti-pop Shure PS-6</li>
+              <br />
+              <li>- Mac mini M1</li>
+              <br />
+              <li>- Pro Tools Studio</li>
+            </ul>
           </div>
-          <img ref="img1" src="/images/studio-mylo.jpeg">
         </div>
-     
-      </section>
-      <section class="video-section">
-      <video controls>
-        <source src="/video/demain_des_laube.mp4" type="video/mp4">
-      </video>
-      </section> 
+        <img ref="img1" src="/images/studio-mylo.jpeg" />
+      </div>
+    </section>
+    <section class="video-section">
+      <iframe height="600" src="https://www.youtube.com/embed/P9nJpAhNe8k">
+      </iframe>
+    </section>
     <h1>Contact</h1>
     <section>
       <div class="contact-section">
-        <span class="material-symbols-outlined">
-          phone
-        </span>
-        <br>
+        <span class="material-symbols-outlined"> phone </span>
+        <br />
         <p>
           <a href="tel:+336 12 79 13 07">06 12 79 13 07</a>
         </p>
       </div>
       <div class="contact-section">
-        <span class="material-symbols-outlined">
-          email
-        </span>
-        <br>
+        <span class="material-symbols-outlined"> email </span>
+        <br />
         <p>
-          <a href="mailto:n.battiston@outlook.fr">
-            n.battiston@outlook.fr
-          </a>
+          <a href="mailto:n.battiston@outlook.fr"> n.battiston@outlook.fr </a>
         </p>
       </div>
       <a href="https://www.instagram.com/battistonnadia/">
-      <div class="contact-section">
-        <img src="/images/instagram.svg" alt="instagram" class="icon">
-        <br>
-        <p>
-            @battistonnadia
-          </p>
+        <div class="contact-section">
+          <img src="/images/instagram.svg" alt="instagram" class="icon" />
+          <br />
+          <p>@battistonnadia</p>
         </div>
       </a>
-      </section>
+    </section>
   </div>
 </template>
-
 
 <style scoped>
 #max-size {
@@ -102,7 +87,7 @@ img {
   width: 45%;
   height: auto;
 }
-.text-side{
+.text-side {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,13 +149,13 @@ img {
 h1 {
   color: white;
   font-size: 2.65rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   padding: 2rem 0 0 2rem;
 }
 
 section {
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.2rem;
   display: flex;
   padding: 2rem;
@@ -190,11 +175,7 @@ li {
   background-color: var(--color2);
   width: 30vw;
   margin: 1rem;
-
 }
-
-
-
 
 @media screen and (max-width: 940px) {
   section {
@@ -209,7 +190,7 @@ li {
     flex-direction: column;
     margin: 0 auto;
     width: 80vw;
-  }  
+  }
 
   .contact-section {
     width: 80vw;
@@ -217,7 +198,6 @@ li {
   li {
     font-size: 1rem;
   }
-
 }
 
 .material-symbols-outlined {
@@ -232,8 +212,7 @@ li {
   width: 40px;
   height: 40px;
 }
-
-</style> 
+</style>
 <!-- <template>
   <div id="max-size">
 
