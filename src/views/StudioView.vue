@@ -181,11 +181,11 @@ li {
 }
 
 .video-section {
-  max-height: 90vh;
   width: 100%;
   position: relative;
-  padding-bottom: 100%;
+  padding-bottom: 56.25%;
   height: 0;
+  max-height: none;
 }
 .video {
   position: absolute;
