@@ -37,11 +37,9 @@
     <section class="video-section">
       <iframe
         class="video"
-        height="600"
-        width="100%"
         src="https://www.youtube.com/embed/P9nJpAhNe8k"
-      >
-      </iframe>
+        allowfullscreen
+      ></iframe>
     </section>
     <h1>Contact</h1>
     <section>
@@ -182,7 +180,20 @@ li {
   margin: 1rem;
 }
 
+.video-section {
+  max-height: 90vh;
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+  height: 0;
+}
 .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
   display: block;
 }
 
