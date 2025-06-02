@@ -41,7 +41,7 @@
         playsinline
         poster="/video/demain_des_laube.mp4"
       >
-        <source src="/videos/your-video.mp4" type="video/mp4" />
+        <source src="/video/demain_des_laube.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </section>
