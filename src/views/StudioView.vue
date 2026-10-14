@@ -1,515 +1,250 @@
-<template>
-  <div id="max-size">
-    <h1>Mon studio</h1>
-    <section class="studio-section">
-      <img ref="img1" src="/images/cabine_one_plus.jpg" />
-      <div class="block">
-        <ul></ul>
-      </div>
+<script setup lang="ts">
+import ContactCards from "@/components/ContactCards.vue";
+import { PERSON_ID, SITE_URL, useJsonLd, usePageSeo } from "@/site";
 
-      <div class="block space-between">
-        <img ref="img2" src="/images/studio-micro.jpeg" />
-        <img ref="img3" src="/images/studio.jpeg" />
+usePageSeo({
+  title: "Home studio voix off : Neumann U87 Ai, StudioBricks | Nadia Battiston",
+  description:
+    "Le home studio de Nadia Battiston : cabine StudioBricks VO Edition, micro Neumann U87 Ai, carte son SSL2+ et Pro Tools pour des voix off de qualité professionnelle.",
+  path: "/studio",
+});
+
+useJsonLd({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "« Demain, dès l'aube… » de Victor Hugo, lu par Nadia Battiston",
+  description:
+    "Lecture du poème « Demain, dès l'aube… » de Victor Hugo, enregistrée par Nadia Battiston dans son home studio.",
+  thumbnailUrl: `${SITE_URL}/video/demain_des_laube-poster.webp`,
+  contentUrl: `${SITE_URL}/video/demain_des_laube.mp4`,
+  uploadDate: "2025-02-24T09:53:27+01:00",
+  duration: "PT40S",
+  inLanguage: "fr",
+  actor: { "@id": PERSON_ID },
+});
+
+const gear = [
+  { type: "Cabine", name: "StudioBricks VO Edition" },
+  { type: "Microphone", name: "Neumann U87 Ai" },
+  { type: "Carte son", name: "SSL2+" },
+  { type: "Casque", name: "Neumann NDH 20" },
+  { type: "Filtre anti-pop", name: "Shure PS-6" },
+  { type: "Ordinateur", name: "Mac mini M1" },
+  { type: "Logiciel", name: "Pro Tools Studio" },
+];
+
+const photos = [
+  {
+    file: "studio-micro",
+    alt: "Micro Neumann U87 Ai avec filtre anti-pop et casque dans la cabine",
+    caption: "Neumann U87 Ai",
+  },
+  {
+    file: "studio",
+    alt: "Intérieur de la cabine d'enregistrement : poste de travail, micro et fauteuil",
+    caption: "La cabine",
+  },
+  {
+    file: "studio-mylo",
+    alt: "Un chat assis sur le fauteuil de la cabine d'enregistrement",
+    caption: "Mylo, l'assistant du studio",
+  },
+];
+</script>
+
+<template>
+  <div class="container page">
+    <header class="intro">
+      <div>
+        <p class="eyebrow">Home studio</p>
+        <h1>Mon studio d'enregistrement</h1>
+        <p class="lead">
+          Une cabine acoustique professionnelle et un matériel de référence pour enregistrer vos voix
+          off, doublages et narrations dans les meilleures conditions.
+        </p>
       </div>
-      <div class="block space-between">
-        <div class="text-side">
-          <div class="text-holder">
-            <ul>
-              <li>- Cabine StudioBricks VO Edition</li>
-              <br />
-              <li>- Carte son SSL2+</li>
-              <br />
-              <li>- Micro Neumann U87 Ai</li>
-              <br />
-              <li>- Casque Neumann NDH 20</li>
-              <br />
-              <li>- Filtre anti-pop Shure PS-6</li>
-              <br />
-              <li>- Mac mini M1</li>
-              <br />
-              <li>- Pro Tools Studio</li>
-            </ul>
-          </div>
+      <img
+        class="cabine"
+        src="/images/studio/cabine-800.webp"
+        width="800"
+        height="800"
+        alt="Cabine d'enregistrement StudioBricks VO Edition"
+        fetchpriority="high"
+      />
+    </header>
+
+    <section class="section gear-section" aria-labelledby="gear-title">
+      <h2 id="gear-title">Le matériel</h2>
+      <dl class="gear">
+        <div v-for="item in gear" :key="item.type" class="gear-item">
+          <dt>{{ item.type }}</dt>
+          <dd>{{ item.name }}</dd>
         </div>
-        <img ref="img1" src="/images/studio-mylo.jpeg" />
-      </div>
+      </dl>
     </section>
-    <section class="video-section">
+
+    <section aria-label="Photos du studio">
+      <ul role="list" class="photos">
+        <li v-for="photo in photos" :key="photo.file">
+          <figure>
+            <img
+              :src="`/images/studio/${photo.file}-800.webp`"
+              :srcset="`/images/studio/${photo.file}-800.webp 800w, /images/studio/${photo.file}-1600.webp 1600w`"
+              sizes="(max-width: 760px) 100vw, 33vw"
+              width="800"
+              height="1067"
+              :alt="photo.alt"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>{{ photo.caption }}</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section video-section" aria-labelledby="video-title">
       <video
         class="video"
         controls
         playsinline
-        poster="/video/demain_des_laube.mp4"
+        preload="none"
+        poster="/video/demain_des_laube-poster.webp"
+        width="607"
+        height="1080"
       >
         <source src="/video/demain_des_laube.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        Votre navigateur ne peut pas lire cette vidéo.
       </video>
+      <div>
+        <p class="eyebrow">En cabine</p>
+        <h2 id="video-title">«&nbsp;Demain, dès l'aube…&nbsp;»</h2>
+        <p class="lead">
+          Le poème de Victor Hugo, lu et enregistré dans le studio. Quarante secondes pour entendre
+          la voix, le grain et l'interprétation.
+        </p>
+      </div>
     </section>
-    <h1>Contact</h1>
-    <section>
-      <div class="contact-section">
-        <span class="material-symbols-outlined"> phone </span>
-        <br />
-        <p>
-          <a href="tel:+336 12 79 13 07">06 12 79 13 07</a>
-        </p>
-      </div>
-      <div class="contact-section">
-        <span class="material-symbols-outlined"> email </span>
-        <br />
-        <p>
-          <a href="mailto:n.battiston@outlook.fr"> n.battiston@outlook.fr </a>
-        </p>
-      </div>
-      <a href="https://www.instagram.com/battistonnadia/">
-        <div class="contact-section">
-          <img src="/images/instagram.svg" alt="instagram" class="icon" />
-          <br />
-          <p>@battistonnadia</p>
-        </div>
-      </a>
+
+    <section class="section contact" aria-labelledby="contact-title">
+      <header class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Un projet à enregistrer&nbsp;?</h2>
+        <p>Une question sur le studio ou sur votre projet&nbsp;? Contactez-moi directement.</p>
+      </header>
+      <ContactCards />
     </section>
   </div>
 </template>
 
 <style scoped>
-#max-size {
-  margin: auto;
-  max-width: 1700px;
-}
-h3 {
-  font-size: 2.5rem;
-  color: white;
-  text-align: center;
-  align-self: flex-start;
-}
-section {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: auto;
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
 }
 
-img {
-  width: 45%;
-  height: auto;
-}
-.text-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  width: 100%;
-}
-.title {
-  border: 2px solid white;
-  padding: 0 1rem;
-  margin: auto;
-  align-self: self-start;
+.intro .lead {
+  max-width: 40ch;
+  margin-top: 22px;
 }
 
-.block {
-  margin: 2rem auto;
-  display: flex;
+.cabine {
   width: 100%;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 1700px;
+  border-radius: var(--radius);
+  background: #e7e5e1;
 }
+
+.gear-section h2 {
+  margin-bottom: 32px;
+}
+
+.gear {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+  gap: 12px;
+}
+
+.gear-item {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.gear-item dt {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.gear-item dd {
+  margin-top: 2px;
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.photos img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
 .video-section {
-  max-height: 90vh;
-}
-.space-between {
-  justify-content: space-between;
-}
-
-.text-holder {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-}
-.giga-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.slider {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-}
-
-.studio-section {
-  width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 10px;
+  gap: clamp(32px, 6vw, 80px);
 }
 
-h1 {
-  color: white;
-  font-size: 2.65rem;
-  font-family: "Inter", sans-serif;
-  padding: 2rem 0 0 2rem;
+.video {
+  width: min(360px, 100%);
+  aspect-ratio: 607 / 1080;
+  border-radius: var(--radius);
+  background: #000;
 }
 
-section {
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
-  display: flex;
-  padding: 2rem;
+.video-section .lead {
+  max-width: 40ch;
+  margin-top: 20px;
 }
 
-li {
-  font-size: 1.3rem;
+.contact {
+  padding-bottom: 0;
+  border-top: 1px solid var(--line);
 }
 
-.contact-section {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: var(--color2);
-  width: 30vw;
-  margin: 1rem;
-}
-
-@media screen and (max-width: 940px) {
-  section {
-    flex-direction: column;
-    padding: 0;
-  }
-  img {
-    width: 80vw;
-    margin: 15px 0;
-  }
-  .block {
-    flex-direction: column;
-    margin: 0 auto;
-    width: 80vw;
+@media (max-width: 860px) {
+  .intro,
+  .video-section {
+    grid-template-columns: 1fr;
   }
 
-  .contact-section {
-    width: 80vw;
+  .cabine {
+    max-width: 420px;
   }
-  li {
-    font-size: 1rem;
+
+  .video {
+    margin-inline: auto;
   }
 }
 
-.material-symbols-outlined {
-  font-size: 2rem;
-}
-
-.text {
-  width: 60%;
-  padding: 2rem;
-}
-.icon {
-  width: 40px;
-  height: 40px;
+@media (max-width: 760px) {
+  .photos {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
-<!-- <template>
-  <div id="max-size">
-
-    <h1>Mon studio</h1>
-    <div id="block">
-      <section class="studio-section">
-        <div class="text">
-          <ul>
-            <li>- Cabine StudioBricks VO Edition</li>
-            <li>- Carte son SSL2+ </li>
-            <li>- Mac mini M1</li>
-            <li>- Pro Tools Studio</li>
-            <li>- Micro Neumann U87 Ai</li>
-            <li>- Casque Neumann NDH 20</li>
-            <li>- Filtre anti-pop Shure PS-6</li>
-          </ul>
-        </div>
-        <div class="container">
-          <div class="slider">
-            <img ref="img1" src="/images/studio-mylo.jpeg">
-            <img ref="img2" src="/images/studio-micro.jpeg">
-            <img ref="img3" src="/images/studio.jpeg">
-          </div>
-          <a class="prev" @click="handleOnUp">&#10094;</a>
-          <a class="next" @click="handleOnDown">&#10095;</a>
-        </div>
-      </section>
-    </div>
-    <h1>Contact</h1>
-    <section>
-      <div class="contact-section">
-        <span class="material-symbols-outlined">
-          phone
-        </span>
-        <br>
-        <p>
-          <a href="tel:+336 12 79 13 07">06 12 79 13 07</a>
-        </p>
-      </div>
-      <div class="contact-section">
-        <span class="material-symbols-outlined">
-          email
-        </span>
-        <br>
-        <p>
-          <a href="mailto:n.battiston@outlook.fr">
-            n.battiston@outlook.fr
-          </a>
-        </p>
-      </div>
-    </section>
-  </div>
-</template>
-  
-<script>
-export default {
-  data() {
-    return {
-      images: [],
-      currentStep: 0,
-    };
-  },
-  mounted() {
-    this.images = [
-      this.$refs.img1,
-      this.$refs.img2,
-      this.$refs.img3,
-    ];
-  },
-  methods: {
-    handleOnUp() {
-      if (this.currentStep === 0) return;
-      this.currentStep--;
-      for (const image of this.images) {
-        image.animate(
-          {
-            transform: `translateX(-${this.currentStep * 100}%)`,
-          },
-          {
-            duration: 500,
-            fill: "forwards",
-            easing: "cubic-bezier(0.42, 0, 0.58, 1)",
-          }
-        );
-      }
-    },
-    handleOnDown() {
-      if (this.currentStep === this.images.length - 1) return;
-      this.currentStep++;
-      for (const image of this.images) {
-        image.animate(
-          {
-            transform: `translateX(-${this.currentStep * 100}%)`,
-          },
-          {
-            duration: 500,
-            fill: "forwards",
-            easing: "cubic-bezier(0.42, 0, 0.58, 1)",
-          }
-        );
-      }
-    },
-  },
-};
-</script>
-
-<style scoped>
-#max-size {
-  margin: auto;
-  max-width: 1700px;
-}
-
-section {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: auto;
-}
-
-#block {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 1300px;
-}
-
-.slider {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-}
-
-.studio-section {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  border-radius: 10px;
-  margin: 1rem;
-}
-
-h1 {
-  color: white;
-  font-size: 2.65rem;
-  font-family: 'Inter', sans-serif;
-  padding: 2rem 0 0 2rem;
-}
-
-section {
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
-  display: flex;
-  padding: 2rem;
-}
-
-li {
-  font-size: 1.3rem;
-}
-
-.contact-section {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: var(--color2);
-  width: 30vw;
-  margin: 1rem;
-
-}
-
-img {
-  width: 100%;
-
-}
-
-
-@media screen and (max-width: 940px) {
-  section {
-    flex-direction: column;
-  }
-
-  .contact-section {
-    width: 80vw;
-  }
-
-
-}
-
-.material-symbols-outlined {
-  font-size: 2rem;
-}
-
-.text {
-  width: 60%;
-  padding: 2rem;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-</style>  -->

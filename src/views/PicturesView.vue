@@ -1,107 +1,184 @@
-<script>
-export default {
-    mounted() {
-        const track = this.$refs.track;
-        const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+<script setup lang="ts">
+import { computed, ref } from "vue";
+import AppIcon from "@/components/AppIcon.vue";
+import photos from "@/assets/photos.json";
+import { usePageSeo } from "@/site";
 
-        const handleOnUp = () => {
-            track.dataset.mouseDownAt = "0";
-            track.dataset.prevPercentage = track.dataset.percentage;
-        }
+usePageSeo({
+  title: "Photos | Nadia Battiston, comédienne voix off",
+  description:
+    "Portraits de Nadia Battiston, comédienne voix off et actrice : découvrez la galerie photo.",
+  path: "/photos",
+});
 
-        const handleOnMove = e => {
-            if (track.dataset.mouseDownAt === "0") return;
+const dialog = ref<HTMLDialogElement>();
+const index = ref(0);
+const current = computed(() => photos[index.value]);
 
-            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-                maxDelta = window.innerWidth / 2;
+const src = (file: string, width: number) => `/images/photos/${file}-${width}.webp`;
 
-            const percentage = (mouseDelta / maxDelta) * -100,
-                nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+function open(i: number) {
+  index.value = i;
+  dialog.value?.showModal();
+}
 
-            track.dataset.percentage = nextPercentage;
-            track.animate({
-                transform: `translate(${(nextPercentage * 2) + 50}%)`
-            }, { duration: 1200, fill: "forwards" });
-            const images = [
-                this.$refs.image1,
-                this.$refs.image2,
-                this.$refs.image3,
-                this.$refs.image4,
-                this.$refs.image5,
-                this.$refs.image6,
-                this.$refs.image7,
-                this.$refs.image8,
-                this.$refs.image9,
-                this.$refs.image10,
-            ];
-            for (const image of images) {
-                image.animate({
-                    objectPosition: `${100 + nextPercentage}% center`
-                }, { duration: 1200, fill: "forwards" });
-            }
-        }
+function step(offset: number) {
+  index.value = (index.value + offset + photos.length) % photos.length;
+}
 
-        /* -- Had to add extra lines for touch events -- */
-
-        window.onmousedown = e => handleOnDown(e);
-
-        window.ontouchstart = e => handleOnDown(e.touches[0]);
-
-        window.onmouseup = e => handleOnUp(e);
-
-        window.ontouchend = e => handleOnUp(e.touches[0]);
-
-        window.onmousemove = e => handleOnMove(e);
-
-        window.ontouchmove = e => handleOnMove(e.touches[0]);
-    },
-};
-
-
+function onKeydown(event: KeyboardEvent) {
+  if (event.key === "ArrowRight") step(1);
+  if (event.key === "ArrowLeft") step(-1);
+}
 </script>
 
-
 <template>
-    <div id="holder">
-        <div ref="track" id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-            <img ref="image1" v-bind:src="'/images/5web.jpg'" class="image" draggable="false">
-            <img ref="image2" v-bind:src="'/images/14web.jpg'" class="image" draggable="false">
-            <img ref="image3" v-bind:src="'/images/2web.jpg'" class="image" draggable="false">
-            <img ref="image4" v-bind:src="'/images/4web.jpg'" class="image" draggable="false">
-            <img ref="image5" v-bind:src="'/images/6web.jpg'" class="image" draggable="false">
-            <img ref="image6" v-bind:src="'/images/7web.jpg'" class="image" draggable="false">
-            <img ref="image7" v-bind:src="'/images/8web.jpg'" class="image" draggable="false">
-            <img ref="image8" v-bind:src="'/images/9web.jpg'" class="image" draggable="false">
-            <img ref="image9" v-bind:src="'/images/3web.jpg'" class="image" draggable="false">
-            <img ref="image10" v-bind:src="'/images/13web.jpg'" class="image" draggable="false">
-        </div>
-    </div>
+  <div class="container page">
+    <header class="section-head">
+      <p class="eyebrow">Galerie</p>
+      <h1>Photos</h1>
+    </header>
+
+    <ul role="list" class="gallery">
+      <li v-for="(photo, i) in photos" :key="photo.file">
+        <button type="button" class="thumb" @click="open(i)">
+          <img
+            :src="src(photo.file, 640)"
+            :srcset="`${src(photo.file, 640)} 640w, ${src(photo.file, 1280)} 1280w`"
+            sizes="(max-width: 640px) 50vw, (max-width: 1000px) 33vw, 300px"
+            width="640"
+            height="960"
+            :alt="photo.alt"
+            :loading="i < 4 ? 'eager' : 'lazy'"
+            :fetchpriority="i === 0 ? 'high' : undefined"
+            decoding="async"
+          />
+          <span class="sr-only">Agrandir la photo</span>
+        </button>
+      </li>
+    </ul>
+
+    <dialog ref="dialog" class="lightbox" aria-label="Photo agrandie" @keydown="onKeydown" @click.self="dialog?.close()">
+      <img :src="src(current.file, 1280)" :alt="current.alt" width="1280" height="1920" />
+      <button type="button" class="nav close" aria-label="Fermer" @click="dialog?.close()">
+        <AppIcon name="close" :size="24" />
+      </button>
+      <button type="button" class="nav prev" aria-label="Photo précédente" @click="step(-1)">
+        <AppIcon name="left" :size="28" />
+      </button>
+      <button type="button" class="nav next" aria-label="Photo suivante" @click="step(1)">
+        <AppIcon name="right" :size="28" />
+      </button>
+    </dialog>
+  </div>
 </template>
 
-
 <style scoped>
-#holder {
-    height: 90vh;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
 }
 
-#image-track {
-    display: flex;
-    gap: 4vmin;
-    width: 100%;
-    transform: translate(50%);
-    user-select: none;
+.thumb {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
 }
 
-#image-track>.image {
-    width: 30vh;
-    height: 56vh;
-    object-fit: cover;
-    object-position: 100% center;
+.thumb img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.thumb:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.08);
+}
+
+.lightbox {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.lightbox::backdrop {
+  background: rgba(5, 5, 7, 0.94);
+}
+
+.lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.lightbox img {
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 96px);
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.nav {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  transition: background-color 0.2s ease;
+}
+
+.nav:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.close {
+  top: 16px;
+  right: 16px;
+}
+
+.prev,
+.next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 16px;
+}
+
+.next {
+  right: 16px;
+}
+
+@media (max-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .prev,
+  .next {
+    top: auto;
+    bottom: 16px;
+    transform: none;
+  }
 }
 </style>
