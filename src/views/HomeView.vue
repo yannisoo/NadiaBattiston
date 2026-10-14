@@ -41,7 +41,7 @@ const services = [
   {
     title: "Film institutionnel",
     subtitle: "Entreprises et institutions",
-    text: "Une voix claire et rassurante pour vos films d'entreprise et vos messages institutionnels, comme pour Amundi ou Super U.",
+    text: "Une voix claire et rassurante pour vos films d'entreprise et vos messages institutionnels, comme pour Amundi ou Orangina.",
     categories: ["institutional"],
   },
 ];
