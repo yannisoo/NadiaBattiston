@@ -1,7 +1,65 @@
 [
-
     {
-        "name": "leclerc-drive-chloe",
+        "name": "Medley",
+        "url": "medley.mp3",
+        "image": "medley.jpg",
+        "categories": [
+            "pub_radio",
+            "pub_tv",
+            "institutional",
+            "documentary",
+            "doublage"
+        ],
+        "timbers": [
+            "high",
+            "medium_high",
+            "medium",
+            "medium_low",
+            "low"
+        ],
+        "interpretation": [
+            "chaleureux",
+            "naturel",
+            "rassurant",
+            "souriant",
+            "enveloppant",
+            "promotional",
+            "dynamique",
+            "serious",
+            "informatif",
+            "right",
+            "still",
+            "soft",
+            "maternal",
+            "snob",
+            "whispered",
+            "colère",
+            "tension",
+            "peur",
+            "crie",
+            "tristesse",
+            "frais"
+        ]
+    },
+    {
+        "name": "La Panthère des neiges",
+        "url": "panthere.m4a",
+        "image": "panthere-des-neiges.png",
+        "categories": [
+            "documentary"
+        ],
+        "timbers": [
+            "medium_low",
+            "low"
+        ],
+        "interpretation": [
+            "serious",
+            "informatif",
+            "dynamique"
+        ]
+    },
+    {
+        "name": "E.Leclerc Drive (Chloé)",
         "image": "e-leclerc-logo.png",
         "url": "leclerc-drive-chloe.mp3",
         "categories": [
@@ -17,7 +75,7 @@
         ]
     },
     {
-        "name": "leclerc-drive-cathia",
+        "name": "E.Leclerc Drive (Cathia)",
         "image": "e-leclerc-logo.png",
         "url": "leclerc-drive-cathia.mp3",
         "categories": [
@@ -51,7 +109,6 @@
             "rassurant"
         ]
     },
-    
     {
         "name": "Amundi",
         "url": "amundi.mp3",
@@ -70,7 +127,7 @@
         ]
     },
     {
-        "name": "Citroen C5",
+        "name": "Citroën C5",
         "url": "citroen-C5.mp3",
         "image": "citroen-c5.jpeg",
         "categories": [
@@ -87,7 +144,7 @@
         ]
     },
     {
-        "name": "Louis Philippe prete serement",
+        "name": "Louis-Philippe prête serment",
         "image": "chateau-de-versailles.jpg",
         "url": "louis-philippe-prete-serement.mp3",
         "categories": [
@@ -104,7 +161,7 @@
         ]
     },
     {
-        "name": "Louis Philippe et ses fils",
+        "name": "Louis-Philippe et ses fils",
         "image": "chateau-de-versailles.jpg",
         "url": "louis-philippe-et-ses-fils.mp3",
         "categories": [
@@ -122,7 +179,7 @@
         ]
     },
     {
-        "name": "Prise de la Smala",
+        "name": "La prise de la Smala",
         "image": "chateau-de-versailles.jpg",
         "url": "prise-de-la-smala.mp3",
         "categories": [
@@ -140,7 +197,7 @@
         ]
     },
     {
-        "name": "Louis Phillippe fleuve Muonio",
+        "name": "Louis-Philippe, le fleuve Muonio",
         "image": "chateau-de-versailles.jpg",
         "url": "louis-philipe-fleuve-muonio.mp3",
         "categories": [
@@ -158,7 +215,7 @@
         ]
     },
     {
-        "name": "Citroen",
+        "name": "Citroën",
         "url": "citroen.mp3",
         "image": "citroen.jpg",
         "categories": [
@@ -208,7 +265,7 @@
         ]
     },
     {
-        "name": "Addeco",
+        "name": "Adecco",
         "url": "addeco.mp3",
         "image": "adecco.jpg",
         "categories": [
@@ -467,7 +524,7 @@
         ]
     },
     {
-        "name": "Odissey de l'espace",
+        "name": "Odyssée de l'espace",
         "url": "odissey-de-lespace.mp3",
         "image": "espace.png",
         "categories": [
@@ -485,7 +542,7 @@
         ]
     },
     {
-        "name": "Origina",
+        "name": "Orangina",
         "url": "orangina.mp3",
         "image": "orangina.png",
         "categories": [
@@ -553,7 +610,7 @@
         ]
     },
     {
-        "name": "Qobuz Christophe Mae",
+        "name": "Qobuz Christophe Maé",
         "url": "qobuz-christophe-mae.wav",
         "image": "qobuz.png",
         "categories": [
@@ -620,7 +677,7 @@
         ]
     },
     {
-        "name": "Signal white now",
+        "name": "Signal White Now",
         "url": "white-now.mp3",
         "image": "signal.jpg",
         "categories": [
@@ -670,7 +727,7 @@
         ]
     },
     {
-        "name": "Inspecteur Lewis (dénoument)",
+        "name": "Inspecteur Lewis (dénouement)",
         "image": "inspecteur-lewis.jpeg",
         "url": "inspecteur-lewis-denoument.mp3",
         "categories": [
@@ -699,7 +756,7 @@
         ]
     },
     {
-        "name": "Karol l'homme qui devint Pape",
+        "name": "Karol, l'homme qui devint pape",
         "image": "karol.jpg",
         "url": "karol-lhomme-qui-devint-pape.mp3",
         "categories": [
@@ -753,49 +810,6 @@
         "interpretation": [
             "sensual",
             "soft"
-        ]
-    },
-
-    {
-        "name": "medley",
-        "url": "medley.mp3",
-        "image": "medley.jpg",
-        "categories": [
-            "pub_radio",
-            "pub_tv",
-            "institutional",
-            "documentary",
-            "doublage"
-        ],
-        "timbers": [
-            "high",
-            "medium_high",
-            "medium",
-            "medium_low",
-            "low"
-        ],
-        "interpretation": [
-            "chaleureux",
-            "naturel",
-            "rassurant",
-            "souriant",
-            "enveloppant",
-            "promotional",
-            "dynamique",
-            "serious",
-            "informatif",
-            "right",
-            "still",
-            "soft",
-            "maternal",
-            "snob",
-            "whispered",
-            "colère",
-            "tension",
-            "peur",
-            "crie",
-            "tristesse",
-            "frais"
         ]
     }
 ]

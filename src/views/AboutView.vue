@@ -1,166 +1,143 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ContactCards from "@/components/ContactCards.vue";
+import { usePageSeo } from "@/site";
+
+usePageSeo({
+  title: "Qui suis-je ? Parcours et contact | Nadia Battiston, voix off",
+  description:
+    "Formée au théâtre, comédienne depuis plus de 20 ans, Nadia Battiston se spécialise dans la voix off, le doublage, la narration et la publicité. Parcours et contact.",
+  path: "/a-propos",
+});
+</script>
+
 <template>
-  <div id="max-size">
+  <div class="container page">
+    <section class="about">
+      <figure class="portrait">
+        <img
+          src="/images/photos/4-640.webp"
+          srcset="/images/photos/4-640.webp 640w, /images/photos/4-1280.webp 1280w"
+          sizes="(max-width: 860px) 90vw, 40vw"
+          width="640"
+          height="960"
+          alt="Portrait de Nadia Battiston, comédienne voix off"
+          fetchpriority="high"
+        />
+      </figure>
 
-    <h1>Qui-suis-je?</h1>
+      <div class="text">
+        <p class="eyebrow">À propos</p>
+        <h1>Qui suis-je&nbsp;?</h1>
 
-    <section>
-      <img src="/images/4web.jpg" alt="">
-      <div class="block">
+        <blockquote class="quote">
+          «&nbsp;Ma voix a un pouvoir étrange sur les mots. Une seule intonation sur une syllabe et
+          tout change…&nbsp;»
+        </blockquote>
 
-
-        <div class="handwritten">
-          Ma voix a un pouvoir étrange sur les mots. Une seule intonation sur une syllabe et tout change...
-          <br>
-          
-        </div>
-        <div class="text">
+        <div class="bio">
           <p>
             Je suis née à Paris de parents algériens dont je parle le dialecte avec aisance.
-            <br>
-            À 7 ans, j'ai déjà une bonne élocution. J'aime lire à haute voix pour faire vivre les personnages. Quelque
-            chose
-            frissonne en moi...
-            <br>
-            10 ans ! Je lis ma première pièce de Shakespeare. Je suis subjuguée par sa plume, par ces mots, mais je ne
-            comprends rien !
           </p>
-          <br>
           <p>
-            En 1987, j'obtiens un BAC littéraire option Art Dramatique. J'intègre ensuite, pendant trois ans, l'École de
-            Théâtre le T.E.M à Montreuil sous la direction de Michel BLIN. Nous avons travaillé sur différents auteurs et
-            monté avec notre troupe la pièce de théâtre "La Poche Parmentier" de Georges Perec.
+            À 7&nbsp;ans, j'ai déjà une bonne élocution. J'aime lire à haute voix pour faire vivre
+            les personnages. Quelque chose frissonne en moi…
+            10&nbsp;ans&nbsp;! Je lis ma première pièce de Shakespeare. Je suis subjuguée par sa
+            plume, par ces mots, mais je ne comprends rien&nbsp;!
           </p>
-          <br>
+
+          <h2>Une formation de théâtre</h2>
           <p>
-            En parallèle, je travaille chez "Première Heure". C'est là que je fais mes premiers pas dans la voix off. J'ai
-            cette facilité à placer et à poser ma voix.
-            <br>
-            J'aime cette ambiance de travail, c'est une révélation !
-            <br>
+            En 1987, j'obtiens un BAC littéraire option Art Dramatique. J'intègre ensuite, pendant
+            trois ans, l'École de Théâtre le T.E.M à Montreuil sous la direction de Michel BLIN.
+            Nous avons travaillé sur différents auteurs et monté avec notre troupe la pièce de
+            théâtre «&nbsp;La Poche Parmentier&nbsp;» de Georges Perec.
           </p>
-          <br>
+
+          <h2>La révélation de la voix off</h2>
           <p>
-            Je prends mon envol et me spécialise dans le doublage, voice-over, narration, radio, films institutionnels et
-            publicités.
-            <br>
-            Aujourd'hui, comédienne depuis 20 ans, je voue une véritable passion pour la comédie, la poésie, le théâtre…
-            <br>
-            J’apprends encore et toujours des textes qui résonnent en moi.
-            <br>
+            En parallèle, je travaille chez «&nbsp;Première Heure&nbsp;». C'est là que je fais mes
+            premiers pas dans la voix off. J'ai cette facilité à placer et à poser ma voix. J'aime
+            cette ambiance de travail, c'est une révélation&nbsp;!
+          </p>
+          <p>
+            Je prends mon envol et me spécialise dans le doublage, voice-over, narration, radio,
+            films institutionnels et publicités. Aujourd'hui, comédienne depuis 20&nbsp;ans, je voue
+            une véritable passion pour la comédie, la poésie, le théâtre… J'apprends encore et
+            toujours des textes qui résonnent en moi.
           </p>
         </div>
       </div>
     </section>
-    <h1>Contact</h1>
-    <section class="contact-block">
-      <div class="contact-section">
-        <span class="material-symbols-outlined">
-          phone
-        </span>
-        <br>
-        <p>
-          <a href="tel:+336 12 79 13 07">06 12 79 13 07</a>
-        </p>
-      </div>
-      <div class="contact-section">
-        <span class="material-symbols-outlined">
-          email
-        </span>
-        <br>
 
-        <p>
-          <a href="mailto:n.battiston@outlook.fr">
-            n.battiston@outlook.fr
-          </a>
-        </p>
-      </div>
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <header class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Travaillons ensemble</h2>
+        <p>Pour tout projet de voix off, de doublage ou de narration, contactez-moi directement.</p>
+      </header>
+      <ContactCards />
     </section>
   </div>
 </template>
 
 <style scoped>
-img {
-  aspect-ratio: 667/1000;
-  width: 30vw;
-  height: calc(30% * 1000/667);
-  max-width: 667px;
-  max-height: 1000px;
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(32px, 6vw, 88px);
 }
 
-#max-size {
-  max-width: 1700px;
-  margin: auto;
+.portrait {
+  position: sticky;
+  top: calc(var(--header-height) + 32px);
 }
 
-.right{
-  text-align: right;
-  padding-right: 15%;
-}
-.handwritten {
-  font-family: 'handwritten';
-  font-size: 2rem;
-  padding: 2rem;
-  text-align: center;
+.portrait img {
+  width: 100%;
+  border-radius: var(--radius);
 }
 
-h1 {
-  color: white;
-  font-size: 2.65rem;
-  font-family: 'Inter', sans-serif;
-  padding: 2rem 0 0 2rem;
+.quote {
+  margin: 32px 0 40px;
+  padding-left: 24px;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  line-height: 1.3;
 }
 
-section {
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
-  display: flex;
-  padding: 2rem;
+.bio {
+  max-width: 62ch;
+  font-size: 1.075rem;
+  color: #d4d0c8;
 }
 
-.contact-section {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: var(--color2);
-  width: 30vw;
-  margin: 1rem;
+.bio p + p {
+  margin-top: 1.1em;
 }
 
-.contact-block {
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-
+.bio h2 {
+  margin: 40px 0 14px;
+  font-size: 1.9rem;
+  color: var(--text);
 }
 
-@media screen and (max-width: 940px) {
-  section {
-    flex-direction: column;
+.contact {
+  margin-top: clamp(64px, 10vw, 120px);
+  padding-bottom: 0;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 860px) {
+  .about {
+    grid-template-columns: 1fr;
   }
 
-  .contact-section {
-    width: 80vw;
+  .portrait {
+    position: static;
+    max-width: 440px;
   }
-  img {
-    margin: auto;
-    width: 80vw;
-    height: calc(80vw * 1000/667);
-  }
-}
-
-
-.material-symbols-outlined {
-  font-size: 2rem;
-}
-
-.text {
-  padding: 2rem;
 }
 </style>
-
-

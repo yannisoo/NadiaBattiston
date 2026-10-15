@@ -1,4 +1,4 @@
 export interface Group {
-    name: String;
-    value: String;
+    name: string;
+    value: string;
 }

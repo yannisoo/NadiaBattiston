@@ -1,197 +1,180 @@
-import type { ExtractAudio } from "@/models/audio";
+import { FILTER_GROUPS, type ExtractAudio, type FilterGroup } from "@/models/audio";
+import type { Group } from "@/models/group";
 import { defineStore } from "pinia";
-import extracts from '../assets/extracts.json';
-import { supabase } from '../supabase'
-import { ref, watch } from "vue";
+import { computed, reactive, ref } from "vue";
+import extracts from "../assets/extracts.json";
+import filters from "../assets/filters.json";
+
+const labels = new Map(
+  FILTER_GROUPS.flatMap((group) =>
+    (filters[group] as Group[]).map((filter) => [`${group}:${filter.value}`, filter.name])
+  )
+);
+
+export function filterLabel(group: FilterGroup, value: string) {
+  return labels.get(`${group}:${value}`);
+}
 
 export const useAudioStore = defineStore("audio", () => {
+  const baseAudios = extracts as ExtractAudio[];
 
+  const activeGroup = ref<FilterGroup>("categories");
 
-  const audio = ref<HTMLAudioElement>();
+  const selected = reactive<Record<FilterGroup, string[]>>({
+    categories: [],
+    timbers: [],
+    interpretation: [],
+  });
 
-  const currentStep = ref(1);
+  const current = ref<ExtractAudio>();
 
   const isPlaying = ref(false);
 
-  const baseAudios = ref<ExtractAudio[]>(extracts as ExtractAudio[]);
+  const currentTime = ref(0);
 
-  const filteredAudios = ref<ExtractAudio[]>(extracts as ExtractAudio[]);
+  const duration = ref(0);
 
-  const title = ref<ExtractAudio>();
+  // Kept out of the reactive state: only the derived values above are rendered
+  let audio: HTMLAudioElement | undefined;
 
-  const categories = ref<string[]>([]);
+  // OR inside a group, AND between groups
+  const filteredAudios = computed(() =>
+    baseAudios.filter((extract) =>
+      FILTER_GROUPS.every(
+        (group) =>
+          selected[group].length === 0 ||
+          selected[group].some((value) => extract[group].includes(value))
+      )
+    )
+  );
 
-  const timbers = ref<string[]>([]);
-
-  const interpretations = ref<string[]>([]);
-
-  const audioIndex = ref<number>(-1);
-
+  const hasFilters = computed(() => FILTER_GROUPS.some((group) => selected[group].length > 0));
 
   async function registerListen(name: string) {
-    const { data } = await supabase.from('audio').select('listen').eq('name', name).single()
-    await supabase
-      .from('audio')
-      .update({
-        listen: data?.listen + 1,
-      })
-      .eq('name', name)
-      .single()
-  }
-
-  function setAudioFile(audioPath: string) {
-    if (audio.value) {
-      audio.value.pause();
+    try {
+      const { supabase } = await import("../supabase");
+      const { data } = await supabase.from("audio").select("listen").eq("name", name).single();
+      await supabase
+        .from("audio")
+        .update({
+          listen: data?.listen + 1,
+        })
+        .eq("name", name)
+        .single();
+    } catch {
+      // Listen statistics must never break playback
     }
-    registerListen(audioPath)
-    audio.value = new Audio('audio/' + audioPath);
-    isPlaying.value = true;
-    audio.value.play();
   }
 
-  function changeStep(newState: number) {
-    currentStep.value = newState;
-  }
-
-  function nextStep() {
-    currentStep.value++;
-  }
-
-  function previousAudio() {
-    if (audioIndex.value === 0) {
-      audioIndex.value = filteredAudios.value.length - 1
-      return
-    }
-    audioIndex.value--;
-
-  }
-  function nextAudio() {
-    if (audioIndex.value === filteredAudios.value.length - 1) {
-      audioIndex.value = 0
-      return
-    }
-    audioIndex.value++;
-  }
-
-  function chooseAudio(index: number) {
-    audioIndex.value = index;
-  }
-
-  function download() {
-    if (!title.value) return
-    const link = document.createElement('a');
-    link.href = 'audio/' + title.value.url;
-    link.download = 'Nadia_Battiston_' + title.value.name;
-    link.click();
-  } 
-
-  function updateCategory(category: string) {
-    if (categories.value.includes(category)) {
-      categories.value = categories.value.filter((c) => c !== category);
+  function select(extract: ExtractAudio) {
+    if (current.value?.url === extract.url) {
+      toggle();
       return;
     }
-    categories.value = [...categories.value, category];
-  }
+    audio?.pause();
+    current.value = extract;
+    currentTime.value = 0;
+    duration.value = 0;
 
-  function updateTimber(timber: string) {
-    if (timbers.value.includes(timber)) {
-      timbers.value = timbers.value.filter((t) => t !== timber);
-      return;
+    const element = new Audio("/audio/" + extract.url);
+    const isCurrent = () => element === audio;
+    element.addEventListener("loadedmetadata", () => isCurrent() && (duration.value = element.duration));
+    element.addEventListener("timeupdate", () => isCurrent() && (currentTime.value = element.currentTime));
+    element.addEventListener("play", () => isCurrent() && (isPlaying.value = true));
+    element.addEventListener("pause", () => isCurrent() && (isPlaying.value = false));
+    element.addEventListener("ended", () => isCurrent() && nextAudio());
+    audio = element;
 
-    }
-    timbers.value = [...timbers.value, timber];
-  }
-
-  function updateInterpretation(interpretation: string) {
-    if (interpretations.value.includes(interpretation)) {
-      interpretations.value = interpretations.value.filter(
-        (i) => i !== interpretation
-      );
-      return;
-    }
-    interpretations.value = [...interpretations.value, interpretation];
+    registerListen(extract.url);
+    play();
   }
 
   function play() {
-    if (!audio.value) return
-    isPlaying.value = true;
-    audio.value.play();
+    audio?.play().catch(() => (isPlaying.value = false));
   }
 
   function pause() {
-    if (!audio.value) return
-    isPlaying.value = false;
-    audio.value.pause();
-  }
-  watch([categories, timbers, interpretations], () => {
-    let tempCategories: ExtractAudio[] = [];
-    for (let category of categories.value) {
-      tempCategories = [...tempCategories, ...baseAudios.value.filter((audio) =>
-        audio.categories.includes(category)
-      )];
-    }
-    let baseTimbers = tempCategories.length == 0 ? baseAudios.value : tempCategories
-    let tempTimbers: ExtractAudio[] = []
-    console.log(baseTimbers)
-    for (let timber of timbers.value) {
-      console.log('hey')
-      tempTimbers = [...tempTimbers, ...baseTimbers.filter((audio) =>
-        audio.timbers.includes(timber)
-      )]
-    }
-    let baseInterpretation = tempTimbers.length === 0 ? baseTimbers : tempTimbers
-    let tempInterpretation: ExtractAudio[] = []
-    console.log(baseInterpretation)
-    console.log(tempInterpretation)
-    for (let interpretation of interpretations.value) {
-      tempInterpretation = [...tempInterpretation, ...baseInterpretation.filter((audio) =>
-        audio.interpretation.includes(interpretation)
-      )];
-    }
-    tempInterpretation = tempInterpretation.length === 0 ? baseInterpretation : tempInterpretation
-    filteredAudios.value = [...new Set(tempInterpretation)];
+    audio?.pause();
   }
 
-  )
-  watch(filteredAudios, () => {
-    audioIndex.value = 0
-    audio.value?.addEventListener('ended', () => {
-      audioIndex.value++
-    })
-  })
+  function toggle() {
+    if (!audio) {
+      const first = filteredAudios.value[0];
+      if (first) select(first);
+      return;
+    }
+    if (isPlaying.value) {
+      pause();
+    } else {
+      play();
+    }
+  }
 
-  watch(audioIndex, () => {
-    title.value = filteredAudios.value[audioIndex.value];
-  })
+  function seek(time: number) {
+    if (audio) audio.currentTime = time;
+  }
 
-  watch(title, () => {
-    if (!title.value) return
-    setAudioFile(title.value.url)
-  })
+  function step(offset: number) {
+    const list = filteredAudios.value;
+    if (list.length === 0) return;
+    const index = list.findIndex((extract) => extract.url === current.value?.url);
+    const nextIndex = index === -1 ? 0 : (index + offset + list.length) % list.length;
+    select(list[nextIndex]);
+  }
+
+  function nextAudio() {
+    step(1);
+  }
+
+  function previousAudio() {
+    step(-1);
+  }
+
+  function download() {
+    if (!current.value) return;
+    const link = document.createElement("a");
+    link.href = "/audio/" + current.value.url;
+    link.download = "Nadia_Battiston_" + current.value.url;
+    link.click();
+  }
+
+  function toggleFilter(group: FilterGroup, value: string) {
+    const values = selected[group];
+    selected[group] = values.includes(value)
+      ? values.filter((v) => v !== value)
+      : [...values, value];
+  }
+
+  function resetFilters() {
+    for (const group of FILTER_GROUPS) selected[group] = [];
+  }
+
+  function showCategories(categories: string[]) {
+    resetFilters();
+    selected.categories = categories;
+    activeGroup.value = "categories";
+  }
 
   return {
-    setAudioFile,
-    play,
-    pause,
-    audio,
-    currentStep,
-    changeStep,
-    nextStep,
-    updateCategory,
-    categories,
-    timbers,
-    interpretations,
-    updateTimber,
-    updateInterpretation,
     baseAudios,
     filteredAudios,
-    title,
-    audioIndex,
+    activeGroup,
+    selected,
+    hasFilters,
+    current,
+    isPlaying,
+    currentTime,
+    duration,
+    select,
+    play,
+    pause,
+    toggle,
+    seek,
     nextAudio,
     previousAudio,
-    chooseAudio,
-    isPlaying,
-    download
-  }
-
+    download,
+    toggleFilter,
+    resetFilters,
+    showCategories,
+  };
 });

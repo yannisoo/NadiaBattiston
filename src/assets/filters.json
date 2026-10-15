@@ -9,6 +9,10 @@
             "value": "pub_radio"
         },
         {
+            "name": "Pub Internet",
+            "value": "pub_internet"
+        },
+        {
             "name": "Documentaire",
             "value": "documentary"
         },
@@ -17,11 +21,15 @@
             "value": "doublage"
         },
         {
-            "name": "Film Institutionel",
+            "name": "Film institutionnel",
             "value": "institutional"
         }
     ],
     "timbers": [
+        {
+            "name": "Léger",
+            "value": "high"
+        },
         {
             "name": "Medium léger",
             "value": "medium_high"
@@ -61,7 +69,7 @@
             "value": "enveloppant"
         },
         {
-            "name": "Promotionel",
+            "name": "Promotionnel",
             "value": "promotional"
         },
         {
@@ -69,7 +77,11 @@
             "value": "dynamique"
         },
         {
-            "name": "Serieux",
+            "name": "Enjoué",
+            "value": "enjouee"
+        },
+        {
+            "name": "Sérieux",
             "value": "serious"
         },
         {
@@ -105,8 +117,8 @@
             "value": "whispered"
         },
         {
-            "name":"Colère",
-            "value":"colère"
+            "name": "Colère",
+            "value": "colère"
         },
         {
             "name": "Tension",
